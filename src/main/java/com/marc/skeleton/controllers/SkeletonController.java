@@ -13,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 public class SkeletonController {
 
     @Resource
-    private SkeletonService attributionService;
+    private SkeletonService skeletonService;
 
     @RequestMapping(method= RequestMethod.POST)
     public void create(@RequestBody SkeletonModel skeletonModel,
                        HttpServletRequest request, HttpServletResponse response) {
 
-        attributionService.createSkeletonModel(skeletonModel);
+        skeletonService.createSkeletonModel(skeletonModel);
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
     }
 
@@ -27,7 +27,7 @@ public class SkeletonController {
     public SkeletonModel get(@PathVariable Integer id,
                                     HttpServletRequest request, HttpServletResponse response) {
 
-        SkeletonModel skeletonModel = attributionService.getSkeletonModel(id);
+        SkeletonModel skeletonModel = skeletonService.getSkeletonModel(id);
         response.setStatus(HttpServletResponse.SC_OK);
         return skeletonModel;
     }
