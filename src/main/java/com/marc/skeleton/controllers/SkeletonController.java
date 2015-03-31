@@ -15,7 +15,7 @@ public class SkeletonController {
     @Resource
     private SkeletonService skeletonService;
 
-    @RequestMapping(method= RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public void create(@RequestBody SkeletonModel skeletonModel,
                        HttpServletRequest request, HttpServletResponse response) {
 
@@ -23,13 +23,25 @@ public class SkeletonController {
         response.setStatus(HttpServletResponse.SC_ACCEPTED);
     }
 
-    @RequestMapping(method=RequestMethod.GET)
+    @RequestMapping(value="/{id}", method=RequestMethod.GET)
     public SkeletonModel get(@PathVariable Integer id,
                                     HttpServletRequest request, HttpServletResponse response) {
 
         SkeletonModel skeletonModel = skeletonService.getSkeletonModel(id);
         response.setStatus(HttpServletResponse.SC_OK);
         return skeletonModel;
+    }
+
+    @RequestMapping(method=RequestMethod.PUT)
+    public void update(@RequestBody SkeletonModel skeletonModel,
+                                HttpServletRequest request, HttpServletResponse response) {
+        response.setStatus(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
+    }
+
+    @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
+    public void delete(@PathVariable Integer id,
+                       HttpServletRequest request, HttpServletResponse response) {
+        response.setStatus(HttpServletResponse.SC_METHOD_NOT_ALLOWED);
     }
 
 }

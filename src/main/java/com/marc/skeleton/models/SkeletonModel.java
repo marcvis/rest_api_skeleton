@@ -1,5 +1,8 @@
 package com.marc.skeleton.models;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+
+@JsonAutoDetect
 public class SkeletonModel {
 
     private Integer id;

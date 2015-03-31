@@ -1,5 +1,6 @@
 package com.marc.skeleton.application;
 
+import com.marc.skeleton.application.config.ApplicationConfig;
 import org.springframework.web.WebApplicationInitializer;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

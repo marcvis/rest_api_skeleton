@@ -7,7 +7,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class TestSkeletonModel implements SkeletonService {
+public class TestSkeletonService implements SkeletonService {
 
     private Map<Integer, SkeletonModel> store = new ConcurrentHashMap<Integer, SkeletonModel>();
     private static final SkeletonModel DEFAULT_SKELETON_MODEL = new SkeletonModel(1,"Model","Default");
